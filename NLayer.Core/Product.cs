@@ -12,7 +12,7 @@ namespace NLayer.Core
 
         public int CategoryId { get; set; }
 
-        //Navigation Property
+        // Navigation Property
 
         public Category Category { get; set; }
 

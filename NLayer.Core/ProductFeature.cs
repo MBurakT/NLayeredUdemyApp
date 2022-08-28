@@ -13,7 +13,7 @@ namespace NLayer.Core
 
         public int ProductId { get; set; }
 
-        //Navigation Property
+        // Navigation Property
 
         public Product Product { get; set; }
     }
