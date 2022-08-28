@@ -22,6 +22,9 @@ namespace NLayer.Repository
             // Tek tek vermek için
             // modelBuilder.ApplyConfiguration(new ProductConfiguration());
 
+
+            #region ProductFeatureSeed - Not Clean Code
+
             modelBuilder.Entity<ProductFeature>().HasData(new ProductFeature
             {
                 Id = 1,
@@ -37,6 +40,8 @@ namespace NLayer.Repository
                 Height = 300,
                 Width = 400,
             });
+
+            #endregion
 
             base.OnModelCreating(modelBuilder);
         }
