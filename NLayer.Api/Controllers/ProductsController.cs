@@ -58,6 +58,7 @@ namespace NLayer.Api.Controllers
         }
 
         [HttpDelete("{id}")]
+        [ServiceFilter(typeof(NotFoundFilter<Product>))]
         public async Task<IActionResult> Remove(int id)
         {
             Product product = await _productService.GetByIdAsync(id);
