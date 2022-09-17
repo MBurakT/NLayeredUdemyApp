@@ -27,6 +27,8 @@ builder.Services.AddScoped(typeof(NotFoundFilter<>));
 
 builder.Services.AddFluentValidationAutoValidation().AddValidatorsFromAssemblyContaining<ProductDtoValidator>();
 
+builder.Services.AddMemoryCache();
+
 builder.Services.Configure<ApiBehaviorOptions>(options =>
 {
     options.SuppressModelStateInvalidFilter = true;
