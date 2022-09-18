@@ -15,15 +15,15 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
             @foreach (var item in Model)
             {
-                <td>@item.Name</td>
-                <td>@item.Price</td>
-                <td>@item.Stock</td>
-                <td>@item.Category.Name</td>
-                <td>@item.CreatedDate</td>
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Price</td>
+                    <td>@item.Stock</td>
+                    <td>@item.Category.Name</td>
+                    <td>@item.CreatedDate</td>
+                </tr>
             }
-        </tr>
     </tbody>
 </table>
