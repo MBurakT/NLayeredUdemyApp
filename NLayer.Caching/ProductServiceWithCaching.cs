@@ -29,7 +29,7 @@ namespace NLayer.Caching
 
             if (!_memoryCache.TryGetValue(_cacheProductKey, out _))
             {
-                _memoryCache.Set(_cacheProductKey, _repository.GetProductsWithCategoryAsync());
+                _memoryCache.Set(_cacheProductKey, _repository.GetProductsWithCategoryAsync().Result);
             }
         }
 
