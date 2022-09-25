@@ -58,6 +58,7 @@ namespace NLayer.Web.Controllers
             return View();
         }
 
+        [ServiceFilter(typeof(NotFoundFilter<Product>))]
         public async Task<IActionResult> Update(int id)
         {
             Product product = await _service.GetByIdAsync(id);
@@ -84,6 +85,13 @@ namespace NLayer.Web.Controllers
             ViewBag.categories = new SelectList(categoriesDto, "Id", "Name", productDto.CategoryId);
 
             return View(productDto);
+        }
+
+        public async Task<IActionResult> Remove(int id)
+        {
+            await _service.RemoveAsync(await _service.GetByIdAsync(id));
+
+            return RedirectToAction(nameof(Index));
         }
     }
 }
